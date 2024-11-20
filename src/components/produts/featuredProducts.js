@@ -4,7 +4,7 @@ const FeaturedProducts = () => {
   return (
     <div style={{ direction: "rtl", padding: "2%" }}>
       <h1>منتجاتنا المميزة</h1>
-      <div className="row">
+      <div className="row container">
         <div className="col-lg-2 " style={{margin:"2%"}}>
           <div className="card" style={{ width: "18rem"  }}>
             <img src="/mainLogo.jpg" className="card-img-top" alt="..." />
