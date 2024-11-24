@@ -6,7 +6,7 @@ const MainNav = () => {
       <nav className="navbar navbar-dark navbar-expand-lg" style={{padding:"2% 1.5% "}}>
         <div className="container-fluid">
           <a className="navbar-brand logo" href="/">
-            <i>D</i>esign <i>H</i>ouse
+            <img className="logo" src="/img/design-house.png" alt="..." width="100%" height="100"/>
           </a>
           <button
             className="navbar-toggler"

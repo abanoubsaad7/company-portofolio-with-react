@@ -101,6 +101,17 @@ nav{
   opacity: 1;
 }
 
+form{
+  width: 100%;
+}
+input {
+  width: 100%;
+  height: 50px;
+}
+textarea{
+  width: 100%;
+  height: 100px;
+}
 
 
 .pageContent {
@@ -119,6 +130,9 @@ nav{
     padding: 0;
     width: 94%;
     margin: 1% 3% ;
+  }
+  .logo{
+    height: 70px;
   }
 
   .slideshow {
