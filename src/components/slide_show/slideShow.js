@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const images = [
-  '/img/slide1.jpg',
-  '/img/slide2.jpg',
-  '/img/slide3.jpg',
+  '/img/cover.png',
 ];
 
 const SlideShow = () => {
@@ -23,8 +21,9 @@ const SlideShow = () => {
         <div
           key={index}
           className={`slide ${index === currentIndex ? 'active' : ''}`}
-          style={{ backgroundImage: `url(${image})` }}
-        ></div>
+        >
+          <img src={image} className={`slide ${index === currentIndex ? 'active' : ''}`} alt='...'/>
+        </div>
       ))}
     </div>
     

@@ -3,9 +3,9 @@ import React from "react";
 const MainNav = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg" style={{padding:"3% 1.5% "}}>
+      <nav className="navbar navbar-dark navbar-expand-lg" style={{padding:"2% 1.5% "}}>
         <div className="container-fluid">
-          <a className="navbar-brand logo" href="/" style={{textShadow:"#EFEFF1"}}>
+          <a className="navbar-brand logo" href="/">
             <i>D</i>esign <i>H</i>ouse
           </a>
           <button

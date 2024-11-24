@@ -6,10 +6,11 @@ import SlideShow from './components/slide_show/slideShow';
 function App() {
   return (
     <>
-      <MainNav/>
-      <center>
+      <section id='cover'>
+        <MainNav/>
         <SlideShow/>
-      </center>
+      </section>
+      
       <FeaturedProducts/>
       <Footer/>
     </>
