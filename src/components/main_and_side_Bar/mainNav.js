@@ -30,17 +30,17 @@ const MainNav = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
-                  المنتجات
+                <a className="nav-link" href="/serveice">
+                  خدماتنا
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <a className="nav-link" href="/contactUs">
                   تواصل معنا
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <a className="nav-link" href="/AboutUs">
                   About us
                 </a>
               </li>

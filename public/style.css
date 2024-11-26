@@ -1,4 +1,14 @@
+body {
+  background-image: url('./img/body-bg1.png'), linear-gradient(to right , #800788 , #4F0766 , #060736);
+  background-blend-mode: normal; 
+  background-size: cover; /* Adjust the image size */
+  background-position: center; /* Center the image */
+}
 
+:root{
+  --color1: #f0f0f0;
+  --color2: #FA961F;
+}
 
 .table-loader-box {
   height: 30px;
@@ -69,6 +79,13 @@ nav{
   background: linear-gradient(to right , #800788 , #4F0766 , #060736);
 }
 
+#cover2{
+  color: #f0f0f0;
+  padding: 6% 3%;
+  background: #060736;
+}
+
+
 
 .slideshow {
   position: relative;
@@ -122,7 +139,201 @@ textarea{
   margin: auto;
   color: whitesmoke;
 }
+/* إعدادات الحاوية */
+.image-container {
+  position: relative;
+  height: 300px; /* يمكنك تغيير الارتفاع حسب الحاجة */
+  margin: 0 auto; /* توسيط الحاوية */
+}
+
+/* إعدادات الصور */
+.image {
+  position: absolute;
+  width: 100%; /* تجعل الصور تملأ الحاوية */
+  height: 100%;
+  object-fit: cover; /* لضبط أبعاد الصورة دون تشويه */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* تأثيرات الحركة */
+  border:#f0f0f0 3px solid ;
+  border-radius: 20px;
+  box-shadow: 5px 10px 8px #000000 ;
+}
+
+/* الصورة الأولى */
+.img1 {
+  z-index: 1;
+  opacity: 0.8;
+  transform: translate(-20px, -10px) rotate(-5deg);
+}
+
+/* الصورة الثانية */
+.img2 {
+  z-index: 2;
+  opacity: 0.9;
+  transform: translate(20px, 10px) rotate(3deg);
+}
+
+/* الصورة الثالثة */
+.img3 {
+  z-index: 3;
+  opacity: 1;
+  transform: translate(0, 0) rotate(-2deg);
+}
+
+/* تأثير عند التحويم */
+.image-container .image:hover {
+  transform: scale(1.05) translate(0, 0); /* تكبير الصورة قليلاً */
+  opacity: 1; /* زيادة الوضوح */
+  z-index: 4; /* تجعل الصورة المتحركة في المقدمة */
+}
+.logo{
+  filter: drop-shadow(5px 10px 8px #000000);
+}
+
+.footerContent{
+  margin: 2%;
+  padding: 2%;
+  color: var(--color1);
+}
+.footerContent h2 , .footerContent h3{
+  color: var(--color2);
+}
+
+.footerHeader{
+  margin-top: -30px;
+  height: 100px;
+  background: var(--color2);
+  justify-content:center ;
+  align-items: center;
+}
+
+.contact-us {
+  background-color: #4F0766;
+  color: #f5c32c;
+  padding: 3%;
+  font-family: Arial, sans-serif;
+}
+
+.contact-header h2,
+.contact-header p {
+  text-align: center;
+}
+
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact-info {
+  flex: 1;
+  margin: 20px;
+  color: white;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.info-item span {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.social-media a {
+  display: inline-block;
+  margin: 10px 10px 0 0;
+  text-decoration: none;
+  color: white;
+}
+
+.social-media a:hover {
+  color: #f5c32c;
+}
+
+.contact-form {
+  flex: 1;
+  margin: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  background-color: #f5c32c;
+  color: #002b4c;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #ffc107;
+}
+
+.button-64 {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button-64:hover span {
+  background: none;
+}
+
+
+
 @media (max-width:1000px) {
+  .button-64 {
+    font-size: 24px;
+    min-width: 196px;
+  }
+  
   .sideBar {
     display: flex;
     flex-direction: row;

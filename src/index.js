@@ -12,7 +12,9 @@ import ManageAccounts from "./dashboard_pages/manageAccounts";
 import ManageAboutUsContent from "./dashboard_pages/manageAboutUsContent";
 import CategoriesForm from "./components/forms/categoriesForm";
 import ProductsForm from "./components/forms/productsForm";
-
+import AboutUsPage from "./portofolioPages/aboutUsPage";
+import ContactUsPage from "./portofolioPages/contactUsPage";
+import ProductsPages from "./portofolioPages/productsPages";
 
 const router = createBrowserRouter([
   {
@@ -24,20 +26,16 @@ const router = createBrowserRouter([
     element:<MainPage/>,
   },
   {
-    path:"/products",
-    element:<MainPage/>,
-  },
-  {
-    path:"/categories",
-    element:<MainPage/>,
+    path:"/serveice",
+    element:<ProductsPages/>,
   },
   {
     path:"/AboutUs",
-    element:<MainPage/>,
+    element:<AboutUsPage/>,
   },
   {
     path:"/contactUs",
-    element:<MainPage/>,
+    element:<ContactUsPage/>,
   },
   {
     path:"/manage-products",

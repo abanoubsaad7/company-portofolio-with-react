@@ -1,3 +1,4 @@
+import CoverSection from './components/coverSection';
 import Footer from './components/footer';
 import MainNav from './components/main_and_side_Bar/mainNav';
 import FeaturedProducts from './components/produts/featuredProducts';
@@ -10,8 +11,8 @@ function App() {
         <MainNav/>
         <SlideShow/>
       </section>
-      
       <FeaturedProducts/>
+      <CoverSection/>
       <Footer/>
     </>
   );

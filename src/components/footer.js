@@ -1,88 +1,124 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const Footer = () => {
+  const [accounts, setAccounts] = useState(null); // Set initial state to null to indicate loading
+  const [aboutUsContent, setAboutUsContent] = useState(null);
+  useEffect(() => {
+    axios
+      .get("http://localhost:6500/display/accounts")
+      .then((response) => {
+        setAccounts(response.data.accountsObj || {}); // Default to an empty object if no data
+        console.log("response.data.accountsObj:", response.data.accountsObj);
+      })
+      .catch((error) => {
+        console.error("Error fetching Accounts data:", error);
+      });
+    axios
+      .get("http://localhost:6500/display/aboutUs")
+      .then((response) => {
+        setAboutUsContent(response.data.aboutUsContentObj);
+      })
+      .catch((err) => {
+        console.log("err :>> ", err);
+      });
+  }, []);
+  if (!accounts) {
+    // Display a loading state or message until the data is fetched
+    return <div>Loading accounts...</div>;
+  }
+  const whatsAppLink = `https://wa.me/${accounts.whatsApp.phone}`;
+
+  if (!aboutUsContent) {
+    return <div>Loading data...</div>;
+  }
   return (
-    <>
-      {/* Remove the container if you want to extend the Footer to full width. */}
-      <div>
-        <footer className="bg-dark text-center text-white">
-          {/* Grid container */}
-          <div className=" p-4 pb-0">
-            {/* Section: Social media */}
-            <section className="mb-4">
-              {/* Facebook */}
-              <a
-                className="btn btn-primary btn-floating m-1"
-                style={{ backgroundColor: "#3b5998" }}
-                href="#!"
-                role="button"
-              >
-                <i className="fab fa-facebook-f" />
-              </a>
-              {/* Twitter */}
-              <a
-                className="btn btn-primary btn-floating m-1"
-                style={{ backgroundColor: "#55acee" }}
-                href="#!"
-                role="button"
-              >
-                <i className="fab fa-twitter" />
-              </a>
-              {/* Google */}
-              <a
-                className="btn btn-primary btn-floating m-1"
-                style={{ backgroundColor: "#dd4b39" }}
-                href="#!"
-                role="button"
-              >
-                <i className="fab fa-google" />
-              </a>
-              {/* Instagram */}
-              <a
-                className="btn btn-primary btn-floating m-1"
-                style={{ backgroundColor: "#ac2bac" }}
-                href="#!"
-                role="button"
-              >
-                <i className="fab fa-instagram" />
-              </a>
-              {/* Linkedin */}
-              <a
-                className="btn btn-primary btn-floating m-1"
-                style={{ backgroundColor: "#0082ca" }}
-                href="#!"
-                role="button"
-              >
-                <i className="fab fa-linkedin-in" />
-              </a>
-              {/* Github */}
-              <a
-                className="btn btn-primary btn-floating m-1"
-                style={{ backgroundColor: "#333333" }}
-                href="#!"
-                role="button"
-              >
-                <i className="fab fa-github" />
-              </a>
-            </section>
-            {/* Section: Social media */}
+    <footer style={{ direction: "rtl" }}>
+      <center>
+        <div className="row container footerHeader">
+          <div className="col-5">
+            <h2>للحصول على عرض سعر مميز</h2>
           </div>
-          {/* Grid container */}
-          {/* Copyright */}
-          <div
-            className="text-center p-3"
-            style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
-          >
-            © 2024 Copyright:
-            <a className="text-white" href="/">
-              MDBootstrap.com
+          <div className="col-5">
+            <a href="/contactUs" className="button-64" style={{ width: "50%" }}>
+              <span>اطلب الان</span>
             </a>
           </div>
-          {/* Copyright */}
-        </footer>
+        </div>
+      </center>
+      <div className="row container" style={{ marginRight: "0" }}>
+        <div className="col-lg-4 footerContent">
+          <img
+            src="/img/design-house.png"
+            width="100%"
+            alt="..."
+            style={{ display: "block" }}
+          />
+          <p>{aboutUsContent.description}</p>
+        </div>
+        <div className="col-lg-3 footerContent">
+          <h3>خدماتنا</h3>
+          <ul>
+            <li>
+              <a href="/service">تصميم</a>
+            </li>
+            <li>
+              <a href="/service">طباعة</a>
+            </li>
+            <li>
+              <a href="/service">واجهات</a>
+            </li>
+            <li>
+              <a href="/service">kfljdkshv</a>
+            </li>
+          </ul>
+        </div>
+        <div className="col-lg-3 footerContent">
+          <h3>تواصل معنا</h3>
+          <ul>
+            <li>
+              <a href={whatsAppLink} target="_blank" rel="noreferrer">
+                whatsApp
+              </a>
+            </li>
+            <li>
+              <a
+                href={accounts.facebookAcc.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="/service">واجهات</a>
+            </li>
+            <li>
+              <a href="/service">kfljdkshv</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      {/* End of .container */}
-    </>
+      <div
+        style={{
+          direction: "ltr",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "#800788",
+          width: "100%",
+          color: "#f0f0f0",
+          height: "50px",
+          padding: "1%",
+        }}
+      >
+        <center>
+          <h4>
+            Designed and Developed by
+            <span style={{ color: "#f5c32c" }}>Eng/Abanoub Saad</span>
+          </h4>
+        </center>
+      </div>
+    </footer>
   );
 };
 
