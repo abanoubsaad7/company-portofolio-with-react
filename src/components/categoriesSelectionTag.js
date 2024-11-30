@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const CategoriesSelectionTag = ({ nameOfListBox }) => {
+const CategoriesSelectionTag = ({ nameOfListBox , onCategoryChange }) => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -15,6 +15,9 @@ const CategoriesSelectionTag = ({ nameOfListBox }) => {
       });
   }, [nameOfListBox]);
 
+  const handleSelection = (event) => {
+    onCategoryChange(event.target.value);
+  };
   
   const selectionData = () => {
     return categories.map((item) => (
@@ -28,8 +31,8 @@ const CategoriesSelectionTag = ({ nameOfListBox }) => {
 
   return (
     <>
-      <select name={nameOfListBox}>
-        <option disabled selected value={'..'} key={'0'}>
+      <select name={nameOfListBox} onChange={handleSelection}>
+        <option disabled selected key={'0'}>
           --select the category--
         </option>
         {selectionData()}

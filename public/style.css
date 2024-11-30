@@ -199,6 +199,25 @@ textarea{
   color: var(--color2);
 }
 
+.footerContent a{
+  text-decoration: none;
+  color: var(--color1);
+}
+
+.footerContent a:hover{
+  color: var(--color2);
+}
+.footerContent ul{
+  list-style-type: circle;
+  padding-left: 20px;
+}
+
+.footerContent ul li::marker {
+  color: var(--color2); /* Change to your desired color */
+  font-size: 1.5em; /* Adjust size to make it appear bolder */
+}
+
+
 .footerHeader{
   margin-top: -30px;
   height: 100px;
@@ -337,6 +356,8 @@ textarea{
   scrollbar-width: thin; /* Firefox scrollbar width */
   scrollbar-color: #7f0788be rgba(0, 0, 0, 0.408); /* Firefox scrollbar thumb and track color */
 }
+
+
 
 .card-container {
   flex: 0 0 auto;

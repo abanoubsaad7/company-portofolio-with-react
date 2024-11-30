@@ -1,6 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import DeleteAPI from "../APIs/deleteAPI";
 
 const CategoriesTable = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:6500/display/categories")
+      .then((response) => {
+        setCategories(response.data.categoriesArr);
+      })
+      .catch((err) => {
+        console.log("err :>> ", err);
+      });
+  }, []);
+
+  const categoriesData = ()=>{
+    return categories.map((item)=>(
+      <>
+      <tr>
+        <td></td>
+        <td>
+          {item.name}
+        </td>
+        <td>
+          <DeleteAPI elementType={'categories'} elementID={item._id}/>
+        </td>
+      </tr>
+      </>
+    ))
+  }
+  
   return (
     <div>
       <table className="table">
@@ -12,10 +43,10 @@ const CategoriesTable = () => {
           </tr>
         </thead>
         <tbody>
-          
+          {categoriesData()}
         </tbody>
       </table>
-      <a href="/add-new-category"> add new </a>
+      <a href="/add-new-category" className="btn btn-lg btn-success"> add new </a>
     </div>
   );
 };

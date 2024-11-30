@@ -60,16 +60,16 @@ const Footer = () => {
           <h3>خدماتنا</h3>
           <ul>
             <li>
-              <a href="/service">تصميم</a>
+              <a href="/serveice">تصميم</a>
             </li>
             <li>
-              <a href="/service">طباعة</a>
+              <a href="/serveice">طباعة</a>
             </li>
             <li>
-              <a href="/service">واجهات</a>
+              <a href="/serveice">واجهات</a>
             </li>
             <li>
-              <a href="/service">kfljdkshv</a>
+              <a href="/serveice">kfljdkshv</a>
             </li>
           </ul>
         </div>
@@ -91,10 +91,10 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="/service">واجهات</a>
+              <a href="/serveice">واجهات</a>
             </li>
             <li>
-              <a href="/service">kfljdkshv</a>
+              <a href="/serveice">kfljdkshv</a>
             </li>
           </ul>
         </div>

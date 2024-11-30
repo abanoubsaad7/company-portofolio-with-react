@@ -50,7 +50,7 @@ const ContactUsSection = () => {
           </div>
         </div>
         <div className="contact-form">
-          <form>
+          <form action='mailto'>
             <label>
               <span>اسم</span>
               <input type="text" placeholder="اسم" />

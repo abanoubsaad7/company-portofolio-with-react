@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 const images = [
   '/img/cover.png',
+  '/img/slide1.jpg',
+  '/img/slide2.jpg',
+  '/img/slide3.jpg',
 ];
 
 const SlideShow = () => {
@@ -10,7 +13,7 @@ const SlideShow = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Change slide every 3 seconds
+    }, 5000); // Change slide every 3 seconds
 
     return () => clearInterval(timer); // Cleanup timer on component unmount
   }, []);
