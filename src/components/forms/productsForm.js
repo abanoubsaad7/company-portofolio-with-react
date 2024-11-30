@@ -1,5 +1,6 @@
 import React from 'react';
 import SideBar from '../main_and_side_Bar/sideBar';
+import CategoriesSelectionTag from '../categoriesSelectionTag';
 
 const ProductsForm = () => {
     return (
@@ -19,7 +20,7 @@ const ProductsForm = () => {
                 <br/><br/>
                 <label>category</label>
                 <br/><br/>
-                <input type='text' name='category'/> {/* don't forget to replace it with selection tag */}
+                <CategoriesSelectionTag nameOfListBox={'category'}/>
                 <br/><br/>
                 <label>coverPhoto:</label>
                 <input type='file' name='coverPhoto'/>

@@ -36,10 +36,10 @@ const Footer = () => {
     <footer style={{ direction: "rtl" }}>
       <center>
         <div className="row container footerHeader">
-          <div className="col-5">
+          <div className="col-lg-5">
             <h2>للحصول على عرض سعر مميز</h2>
           </div>
-          <div className="col-5">
+          <div className="col-lg-5">
             <a href="/contactUs" className="button-64" style={{ width: "50%" }}>
               <span>اطلب الان</span>
             </a>

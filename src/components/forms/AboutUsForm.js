@@ -2,10 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const AboutUsForm = () => {
-    const [aboutUs, setAboutUs] = useState({
-        companyName: '',
-        description: ''
-    });
+    const [aboutUs, setAboutUs] = useState(null);
 
     // Fetch data from API when the component mounts
     useEffect(() => {
@@ -13,16 +10,16 @@ const AboutUsForm = () => {
             .then((response) => {
                 const { aboutUsContentObj } = response.data;
                 if (aboutUsContentObj) {
-                    setAboutUs({
-                        companyName: aboutUsContentObj.companyName || '',
-                        description: aboutUsContentObj.description || ''
-                    });
+                    setAboutUs(aboutUsContentObj);
                 }
             })
             .catch((error) => {
                 console.error('Error fetching About Us data:', error);
             });
     }, []);
+    if (!aboutUs) {
+        return <div>Loading data...</div>;
+      }
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -34,8 +31,23 @@ const AboutUsForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Save updated data logic (optional)
-        console.log('Saved About Us data:', aboutUs);
+        const formData = new FormData(e.target);
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    axios
+      .post(
+        `http://localhost:6500/aboutUs/update/${aboutUs._id}`,
+        formData,
+        config
+      )
+      .then((res) => {
+        alert(res.data.msg);
+      })
+      .catch((err) => console.log(err));
     };
 
     return (

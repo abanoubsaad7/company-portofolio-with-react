@@ -16,9 +16,9 @@ const CoverSection = () => {
           />
         </div>
         <div className="image-container col-lg-5">
-          <img src="/img/cover.png" alt="..." class="image img1" />
-          <img src="/img/slide1.jpg" alt="..." class="image img2" />
-          <img src="/img/slide3.jpg" alt="..." class="image img3" />
+          <img src="/img/cover.png" alt="..." className="image img1" />
+          <img src="/img/slide1.jpg" alt="..." className="image img2" />
+          <img src="/img/slide3.jpg" alt="..." className="image img3" />
         </div>
       </div>
     </section>

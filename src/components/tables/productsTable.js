@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
 const ProductsTable = () => {
-    return (
-        <div>
-            <table class="table">
+  return (
+    <div>
+      <table className="table">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -11,13 +11,11 @@ const ProductsTable = () => {
             <th scope="col">Manage</th>
           </tr>
         </thead>
-        <tbody>
-          
-        </tbody>
+        <tbody></tbody>
       </table>
       <a href="/add-new-product"> add new </a>
-        </div>
-    );
-}
+    </div>
+  );
+};
 
 export default ProductsTable;
