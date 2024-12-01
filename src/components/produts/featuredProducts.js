@@ -23,7 +23,7 @@ const FeaturedProducts = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("slide-in-y-to-top");
+            entry.target.classList.add("animate");
             observer.unobserve(entry.target); // Stop observing once the animation is triggered
           }
         });
@@ -43,7 +43,7 @@ const FeaturedProducts = () => {
   const categoriesData = () => {
     return categories.map((item, index) => (
       <div
-        className="card-container hidden-y-to-top"
+        className="card-container hidden-from-top"
         key={item._id}
         ref={(el) => (cardRefs.current[index] = el)} // Store refs for each card
       >
@@ -74,7 +74,7 @@ const FeaturedProducts = () => {
   };
 
   return (
-    <div style={{ direction: "rtl", padding: "2%" , zIndex:2 , marginTop:"-25%" }}>
+    <div style={{ direction: "rtl", padding: "2%" ,  marginTop:"-25%" }}>
       <center>
         <h1 style={{ color: "#FA961F" }}> خدمات Design House </h1>
       </center>
