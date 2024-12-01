@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 const images = [
   '/img/cover.png',
-  '/img/slide1.jpg',
-  '/img/slide2.jpg',
-  '/img/slide3.jpg',
+  // '/img/slide1.jpg',
+  // '/img/slide2.jpg',
+  // '/img/slide3.jpg',
 ];
 
 const SlideShow = () => {

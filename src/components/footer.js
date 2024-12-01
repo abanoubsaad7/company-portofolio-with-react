@@ -8,8 +8,7 @@ const Footer = () => {
     axios
       .get("http://localhost:6500/display/accounts")
       .then((response) => {
-        setAccounts(response.data.accountsObj || {}); // Default to an empty object if no data
-        console.log("response.data.accountsObj:", response.data.accountsObj);
+        setAccounts(response.data.accountsObj); 
       })
       .catch((error) => {
         console.error("Error fetching Accounts data:", error);

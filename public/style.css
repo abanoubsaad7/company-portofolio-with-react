@@ -100,6 +100,12 @@ nav{
   text-align: center;
   padding: 100px 20px;
 }
+svg{
+  z-index: -1;
+  position: sticky;
+  top: -30px;
+  left: 0;
+}
 
 
 .slide {
@@ -350,11 +356,14 @@ textarea{
 .scroll-container {
   display: flex;
   overflow-x: auto;
-  gap: 20px;
-  padding: 10px;
+  gap: 30px;
   scroll-behavior: smooth;
   scrollbar-width: thin; /* Firefox scrollbar width */
   scrollbar-color: #7f0788be rgba(0, 0, 0, 0.408); /* Firefox scrollbar thumb and track color */
+  background: #642f6d44;
+  margin: 2%;
+  padding: 3%;
+  border-radius: 10px;
 }
 
 
@@ -362,30 +371,112 @@ textarea{
 .card-container {
   flex: 0 0 auto;
   width: fit-content; /* Adjust as needed */
-  margin: 10px 2%;
+  /* margin: 10px 2%; */
 }
 
 .scroll-container .card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 2px dashed var(--color2);
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  background: #642f6d6b;
+  color: var(--color1);
+  position: relative;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Add smooth transitions */
+}
+.scroll-container .card:hover{
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.5); /* Stronger shadow for a lifted effect */
+  transform: scale(1.2); /* Slight zoom effect */
 }
 
 .scroll-container .card-img-top {
   width: 100%;
   height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: scale(0.8); /* Shrink the image slightly */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  z-index: 1;
 }
-
+.scroll-container .card:hover .card-img-top {
+  opacity: 0.5;
+  transform: scale(1); /* Return to normal size */
+}
+.scroll-container .card:hover {
+  box-shadow: 4px 4px 15px rgb(0, 0, 0); /* Stronger shadow for a lifted effect */
+  transform: scale(1.05); /* Slight zoom effect */
+}
 .scroll-container .card-body {
   padding: 10px;
   text-align: center;
+  z-index: 2; /* Keep the text above the image */
 }
 
 .scroll-container .btn {
   margin-top: 10px;
 }
 
+.categoryWithoutPhoto{
+  /* background: #06073671; */
+  background: #4e076629;
+  margin: 2%;
+  padding: 3%;
+  border-radius: 10px;
+  min-height: 600px;
+}
+
+/* Initial hidden state */
+.hidden-x-to-left {
+  opacity: 0;
+  transform: translateX(50px); /* Start slightly off-screen */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Visible state with animation */
+.slide-in-x-to-left {
+  opacity: 1;
+  transform: translateX(0); /* Slide into place */
+}
+
+/* Initial hidden state */
+.hidden-x-to-right {
+  opacity: 0;
+  transform: translateX(0px); /* Start slightly off-screen */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Visible state with animation */
+.slide-in-x-to-right {
+  opacity: 1;
+  transform: translateX(50px); /* Slide into place */
+}
+
+/* Initial hidden state */
+.hidden-y-to-top {
+  opacity: 0;
+  transform: translatey(50px); /* Start slightly off-screen */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Visible state with animation */
+.slide-in-y-to-top {
+  opacity: 1;
+  transform: translatey(0); /* Slide into place */
+}
+/* Initial hidden state */
+.hidden-y-to-bottom {
+  opacity: 0;
+  transform: translatey(0px); /* Start slightly off-screen */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Visible state with animation */
+.slide-in-y-to-bottom {
+  opacity: 1;
+  transform: translatey(50px); /* Slide into place */
+}
 
 
 
