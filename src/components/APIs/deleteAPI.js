@@ -9,7 +9,7 @@ const DeleteAPI = ({ elementType, elementID }) => {
     // const token = localStorage.getItem("token");
 
     axios
-      .delete(`http://localhost:6500/${elementType}/${elementID}`)
+      .delete(`http://localhost:6500/server/v1/${elementType}/${elementID}`)
       .then((res) => {
         // Provide feedback to the user
         alert(res.data.msg);

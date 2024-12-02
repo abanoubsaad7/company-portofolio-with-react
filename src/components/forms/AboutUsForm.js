@@ -6,7 +6,7 @@ const AboutUsForm = () => {
 
     // Fetch data from API when the component mounts
     useEffect(() => {
-        axios.get('http://localhost:6500/display/aboutUs')
+        axios.get('http://localhost:6500/server/v1/display/aboutUs')
             .then((response) => {
                 const { aboutUsContentObj } = response.data;
                 if (aboutUsContentObj) {
@@ -40,7 +40,7 @@ const AboutUsForm = () => {
 
     axios
       .post(
-        `http://localhost:6500/aboutUs/update/${aboutUs._id}`,
+        `http://localhost:6500/server/v1/aboutUs/update/${aboutUs._id}`,
         formData,
         config
       )

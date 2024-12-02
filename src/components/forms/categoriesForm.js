@@ -7,7 +7,7 @@ const CategoriesForm = () => {
     e.preventDefault();
     const data = new FormData(e.target);
     axios
-      .post("http://localhost:6500/categories/add", data, {
+      .post("http://localhost:6500/server/v1/categories/add", data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

@@ -8,7 +8,7 @@ const ProductsForm = () => {
     e.preventDefault();
     const data = new FormData(e.target);
     axios
-      .post("http://localhost:6500/projects/add", data, {
+      .post("http://localhost:6500/server/v1/projects/add", data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

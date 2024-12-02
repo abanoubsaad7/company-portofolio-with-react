@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 const SelectedProjects = ({ selectedCategory }) => {
   const [projects, setProjects] = useState([]);
-  const apiURL = `http://localhost:6500/display/select-projects?selectedCategory=${selectedCategory}`;
+  const apiURL = `http://localhost:6500/server/v1/display/select-projects?selectedCategory=${selectedCategory}`;
   useEffect(() => {
     axios
       .get(apiURL)

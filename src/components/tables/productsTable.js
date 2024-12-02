@@ -7,7 +7,7 @@ const ProductsTable = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:6500/display/projects")
+      .get("http://localhost:6500/server/v1/display/projects")
       .then((response) => {
         setProducts(response.data.projectsArr);
       })

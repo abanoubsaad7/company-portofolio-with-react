@@ -8,7 +8,7 @@ const AboutUsPage = () => {
   const [aboutUsContent, setAboutUsContent] = useState(null);
   useEffect(() => {
     axios
-      .get("http://localhost:6500/display/aboutUs")
+      .get("http://localhost:6500/server/v1/display/aboutUs")
       .then((response) => {
         setAboutUsContent(response.data.aboutUsContentObj);
       })

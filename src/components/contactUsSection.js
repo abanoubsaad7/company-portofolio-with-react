@@ -5,7 +5,7 @@ const ContactUsSection = () => {
     const [accounts, setAccounts] = useState(null); // Set initial state to null to indicate loading
 
     useEffect(() => {
-        axios.get('http://localhost:6500/display/accounts')
+        axios.get('http://localhost:6500/server/v1/display/accounts')
             .then((response) => {
                 setAccounts(response.data.accountsObj || {}); // Default to an empty object if no data
                 console.log('response.data.accountsObj:', response.data.accountsObj);
@@ -50,7 +50,7 @@ const ContactUsSection = () => {
           </div>
         </div>
         <div className="contact-form">
-          <form action='mailto'>
+          <form action='mailto:designhouse127@gmail.com' method='post' encType='text/plain'>
             <label>
               <span>اسم</span>
               <input type="text" placeholder="اسم" />

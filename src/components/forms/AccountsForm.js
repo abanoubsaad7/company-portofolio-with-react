@@ -6,7 +6,7 @@ const AccountsForm = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:6500/display/accounts")
+      .get("http://localhost:6500/server/v1/display/accounts")
       .then((response) => {
         setAccounts(response.data.accountsObj || {}); // Default to an empty object if no data
         console.log("response.data.accountsObj:", response.data.accountsObj);
@@ -48,7 +48,7 @@ const handleInputChange = (e) => {
 
     axios
       .post(
-        `http://localhost:6500/accounts/update/${accounts._id}`,
+        `http://localhost:6500/server/v1/accounts/update/${accounts._id}`,
         formData,
         config
       )

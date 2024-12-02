@@ -8,7 +8,7 @@ const Footer = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:6500/display/accounts")
+      .get("http://localhost:6500/server/v1/display/accounts")
       .then((response) => {
         setAccounts(response.data.accountsObj);
       })
@@ -16,7 +16,7 @@ const Footer = () => {
         console.error("Error fetching Accounts data:", error);
       });
     axios
-      .get("http://localhost:6500/display/aboutUs")
+      .get("http://localhost:6500/server/v1/display/aboutUs")
       .then((response) => {
         setAboutUsContent(response.data.aboutUsContentObj);
       })

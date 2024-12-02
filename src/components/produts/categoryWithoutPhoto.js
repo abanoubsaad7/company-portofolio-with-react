@@ -7,7 +7,7 @@ const CategoryWithoutPhoto = () => {
   useEffect(() => {
     // Fetch categories
     axios
-      .get("http://localhost:6500/display/categories")
+      .get("http://localhost:6500/server/v1/display/categories")
       .then((response) => {
         setCategories(response.data.categoriesArr);
       })
